@@ -1,0 +1,26 @@
+/* highlighting elements that may need to change */
+aside{
+    margin: 10mm;
+    background-color: purple;
+    border: 10mm;
+    float: left;
+    padding: 2em;
+    padding-top: 0.5em;
+}
+
+form{
+    padding: 1em;
+    padding-right: 1.5em;
+    background-color: green;
+    border: 10mm;
+    float: left;
+}
+
+label{
+    padding-right: 5em;
+    background-color: red;
+}
+
+h1{
+    margin-bottom: 0;
+}
