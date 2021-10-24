@@ -1,0 +1,38 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Oct 20, 2021, 2:22:36 PM
+    Author     : mitchelldoruff
+*/
+
+aside{
+    margin: 10mm;
+    background-color: purple;
+    border: 10mm;
+    float: left;
+    padding: 2em;
+    padding-top: 0.5em;
+}
+
+form{
+    padding: 1em;
+    padding-right: 1.5em;
+    background-color: green;
+    border: 10mm;
+    float: left;
+}
+
+label{
+    padding-right: 5em;
+    background-color: red;
+}
+
+h1{
+    margin-bottom: 0;
+}
+
+.asdf {
+    border: 100vm;
+}
