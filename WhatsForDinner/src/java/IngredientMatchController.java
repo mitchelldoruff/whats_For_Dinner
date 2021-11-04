@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author mitchelldoruff
  */
-public class IngredientMatchController  extends HttpServlet{
+public class IngredientMatchController extends HttpServlet{
     public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
     		PrintWriter out = res.getWriter();
                 String ingr = req.getParameter("Ingredients");

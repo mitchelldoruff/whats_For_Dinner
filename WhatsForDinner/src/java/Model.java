@@ -13,7 +13,7 @@ public class Model {
 
 	public static Connection createJDBCConnection() throws SQLException, ClassNotFoundException {
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		String JdbcURL = "jdbc:mysql:///recipeDB";
+		String JdbcURL = "jdbc:mysql:///wfd";
 		String Username = "root";
 		String password = "1qaz2wsx!QAZ@WSX";
 		Connection con = null;
@@ -38,7 +38,7 @@ public class Model {
                     rs.close();
                     return false;
                 }
-                String[] instructions = new String[20];
+               
 		while (rs.next()) {
 				String id = rs.getString(1);
 				String order = rs.getString(2);
@@ -62,11 +62,16 @@ public class Model {
                 if (rs == null) {
                     return false;
                 }
+                String html = "<!DOCTYPE html><html><head><meta charset=\"ISO-8859-1\">\n" +
+"    <style>li { color: blue; }</style></head><body><ol>";
 		while (rs.next()) {
 				String id = rs.getString(1);
 				String recipeName = rs.getString(2);
-				out.println("ID: " + id + ", Name: " + recipeName);
+                                html += "<li>"+recipeName+"</li>";
+				//out.println("ID: " + id + ", Name: " + recipeName);
 		}
+                html += "</ol><a href=\"index.html\">Homepage</a></body></html>";
+                out.println(html);
 		con.close();
 		stmt.close();
 		rs.close();
