@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="column.css">
+
+    <!-- Put JS in its own file later on -->
+    <!-- <script src="column.js" defer></script> -->
+    <script>
+
+    </script>
+</head>
+<body>
+
+    <!-- Requirements: columns for ingredients, measurements, and amounts -->
+    <!-- Singleton pattern, where objects are the same -->
+    <!-- Trying to replicate workday ui for searching jobs, else just get the barebones -->
+    <aside>
+
+        <h1>ingredients</h1>
+        <!-- checkbox and name of header (ingredient, etc.) from database -->
+        <!-- User checks box and changes whats on the display along with ingredients with checked ingredient -->
+        <form>
+            <!-- might use php or ajax to get data from DB to display-->
+            <input type="checkbox" name="item1" id="item1">
+            <label for="item1">ingredient1 (and number of recipes with the ingredient)</label>
+            <br>
+            <input type="checkbox" name="item2" id="item2">
+            <label for="item2">ingredient2 (and number of recipes with the ingredient)</label>
+            <br>
+
+            <!-- example on how to expand list -->
+            <!-- will need to use css to make it look better if i plan to use this -->
+            <button type="button">expand</button> 
+        </form>
+
+        <!-- follows same format as ingredients -->
+        <h1>measurements</h1>
+    </aside>
+</body>
+</html>
