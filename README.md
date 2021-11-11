@@ -19,6 +19,22 @@ Password: 1qaz2wsx!QAZ@WSX
 
 4) Tomcat congigured (Should be mostly automatic)
 
+**Classes**
+GetRecipeController: 
+Retrieves the recipe the user clicked on to view from the database. 
+
+IngredientMatchController: 
+Takes the ingredients the user entered and adds them to an array for the database to query.  
+
+Model:
+Responsible for taking all the search results and inserts them into HTML/CSS so the user can view them.
+
+Recipe List Controller: 
+
+Responsible for retrieving all the recipes that match the user query with the ingredients they have on hand. 
+
+
+
 ***What Needs work***
 Database
 
