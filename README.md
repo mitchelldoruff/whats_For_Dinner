@@ -19,6 +19,14 @@ Password: 1qaz2wsx!QAZ@WSX
 
 4) Tomcat congigured (Should be mostly automatic)
 
+5) Start Tomcat and Sql
+
+6) In browser URL field enter:http://localhost:8080/WhatForDinner/ 
+
+7)Enter Ingredients with a comma separating each respective ingredient
+
+8) Select desired recipe to view from the list
+
 **Classes**
 GetRecipeController: 
 Retrieves the recipe the user clicked on to view from the database. 
