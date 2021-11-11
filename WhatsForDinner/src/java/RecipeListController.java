@@ -15,7 +15,7 @@ public class RecipeListController extends HttpServlet {
 		try {
 			Boolean test = m.getRecipes( out);
 			if (test) {
-				out.println("Recipe Print Successful");
+				return;
 			} else {
 				out.println("Recipe Print unsuccessful");
 			}

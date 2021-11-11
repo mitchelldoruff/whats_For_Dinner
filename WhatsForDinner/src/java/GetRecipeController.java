@@ -17,13 +17,13 @@ import javax.servlet.http.HttpServletResponse;
 public class GetRecipeController  extends HttpServlet{
     public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
     		PrintWriter out = res.getWriter();
-                String id = req.getParameter("recipe");
+                String id = req.getParameter("id");
                 
 		Model m = new Model();
 		try {
 			Boolean test = m.getInstructions( out, id);
 			if (test) {
-				out.println("Recipe Print Successful");
+				return;
 			} else {
 				out.println("Recipe Print unsuccessful");
 			}

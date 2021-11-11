@@ -32,7 +32,7 @@ public class IngredientMatchController extends HttpServlet{
 		try {
 			Boolean test = m.getMatches( out, ingredients);
 			if (test) {
-				out.println("Recipe Print Successful");
+				return;
 			} else {
 				out.println("Recipe Print unsuccessful");
 			}
