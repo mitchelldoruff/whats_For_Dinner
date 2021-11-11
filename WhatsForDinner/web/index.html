@@ -1,65 +1,43 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
-<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="ISO-8859-1">
-    <link rel="stylesheet" type="text/css" href="column.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>whats For Dinner</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Montserrat:wght@200&display=swap" rel="stylesheet">
 
-    <!-- Put JS in its own file later on -->
-    <!-- <script src="column.js" defer></script> -->
-    <script>
-       
-    </script>
-</head>
+</head> 
 <body>
+    <div class = "container hero"> <!--when a user lands on page it will show full height of image/stop when user scrolls down/ end based on where they land -->
+        <div class="menu">   
+    <nav>
+        <img class="logo" src="newLogoY.png" /> 
+        <ul>
+         
+            <li>Home</li>
+            <li><form action="RecipeListController" method="get">
+	<input type = "Submit" value ="Recipes"/>
+        </form></li>
+            <li>About us</li>
+        </ul>
+    </nav>
+   
 
-    <!-- Requirements: columns for ingredients, measurements, and amounts -->
-    <!-- Singleton pattern, where objects are the same -->
-    <!-- Trying to replicate workday ui for searching jobs, else just get the barebones -->
-    <aside>
-
-        <h1>ingredients</h1>
-        <!-- checkbox and name of header (ingredient, etc.) from database -->
-        <!-- User checks box and changes whats on the display along with ingredients with checked ingredient -->
-        <form>
-            <!-- might use php or ajax to get data from DB to display-->
-            <input type="checkbox" name="item1" id="item1">
-            <label for="item1">ingredient1 (and number of recipes with the ingredient)</label>
-            <br>
-            <input type="checkbox" name="item2" id="item2">
-            <label for="item2">ingredient2 (and number of recipes with the ingredient)</label>
-            <br>
-
-            <!-- example on how to expand list -->
-            <!-- will need to use css to make it look better if i plan to use this -->
-            <button type="button">expand</button> 
-        </form>
-        
-        
-
-        <!-- follows same format as ingredients -->
-        <h1>measurements</h1>
-    </aside>
     
-    <!-- Get Full Recipe List -->
-    <form action="RecipeListController" method="get">
-	<input type = "Submit" value ="Get Recipe List"/>
+    <div class="text">
+        <h1>Are you looking for ideas?</h1>
+        <form action="IngredientMatchController" method="get">
+        <input type="text" name = "Ingredients" placeholder = "My ingredients">
+	<input type = "Submit" value ="Add Ingredients" class="button"/>
         </form>
-    <!-- Get specific Recipe instructions -->
-    <form action="GetRecipeController" method="get">
-        Recipe: <input type="text" name = "recipe"><br>
-	<input type = "Submit" value ="SpecificRecipe"/>
-        </form>
-    
-    <!-- Get recipes based on ingredients passed -->
-    <form action="IngredientMatchController" method="get">
-        Ingredients Separated by a comma <input type="text" name = "Ingredients" id = "asdf"><br>
-	<input type = "Submit" value ="IngredientMatchController"/>
-        </form>
-    
+    </div>
+    </div>
+</div>
+
+
 </body>
 </html>
+
