@@ -134,15 +134,51 @@ public class Model {
         if (rs == null) {
             return false;
         }
-        String html = "<!DOCTYPE html><html><head><meta charset=\"ISO-8859-1\">\n"
-                + "    <style>li { color: blue; }</style></head><body><ol>";
+        String html = "<!DOCTYPE html>\n"
+                + "<!-- \n"
+                + "    seaerch.html\n"
+                + "    A list of search queries\n"
+                + "    Created: 11/02/2021\n"
+                + "    Updated: 11/09/2021\n"
+                + "    Author: Tou Ko Lee\n"
+                + " -->\n"
+                + "\n"
+                + "<html lang=\"en\">\n"
+                + "\n"
+                + "<head>\n"
+                + "    <meta charset=\"utf-8\">\n"
+                + "    <title>What's For Dinner</title>\n"
+                + "    <link rel=\"stylesheet\" href=\"search.css\">\n"
+                + "</head>\n"
+                + "\n"
+                + "<body>\n"
+                + "    <h1>What's For Dinner</h1>\n"
+                + "\n"
+                + "    <div id=\"queries\">\n"
+                + "        <div id=\"headers\">\n"
+                + "            <h3>\n"
+                + "                Recipe Name\n"
+                + "            </h3>\n"
+                + "        </div>";
         while (rs.next()) {
             String id = rs.getString(1);
             String recipeName = rs.getString(2);
-            html += "<li>" + recipeName + "</li>";
-            //out.println("ID: " + id + ", Name: " + recipeName);
+            
+                html += "<form class='queries' action=\"GetRecipeController\" method=\"get\">\n"
+                        + "            <p class='name'>" + recipeName + "</p>\n"
+                        + "<input type=\"text\" name = \"id\" id = \"asdf\" hidden value = \"" + id + "\">"
+                        + "            <input type=\"Submit\" value=\"Select Recipe\">\n"
+                        + "        </form>";
+            
         }
-        html += "</ol><a href=\"index.html\">Homepage</a></body></html>";
+        html += "  </div>\n"
+                + "\n"
+                + "<div class=\"footer\">\n"
+                + "  <p>" + "<a href=\"index.html\">Homepage</a></body>" + "</p>\n"
+                + "</div>\n"
+                + "</body>\n"
+                + "\n"
+                + "</html>";
         out.println(html);
         con.close();
         stmt.close();
