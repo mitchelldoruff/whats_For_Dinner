@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- 
+    seaerch.html
+    A list of search queries
+    Created: 11/02/2021
+    Updated: 11/22/2021
+    Author: Tou Ko Lee
+ -->
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>What's For Dinner</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="search.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Montserrat:wght@200&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container hero">
+        <div class="menu">
+            <nav>
+                <img class="logo" src="newLogoY.png" />
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li>
+                        <form action="RecipeListController" method="get">
+                            <input type="Submit" value="Recipes" />
+                        </form>
+                    </li>
+                    <li>About us</li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+
+    <div id="queries">
+        <div id="headers">
+            <h3>
+                Image
+            </h3>
+            <h3>
+                Recipe Name
+            </h3>
+            <h3>
+                Ingredients
+            </h3>
+        </div>
+
+        <form class='queries' id="1" action="GetRecipeController" method="get">
+            <img>
+            <p class='name'>Recipe</p>
+            <p class='ingredient'>ingredients</p>
+            <input type='Submit' value='Select this Recipe'>
+        </form>
+
+        <form class='queries' id="2" action="GetRecipeController" method="get">
+            <img>
+            <p class='name'>Recipe</p>
+            <p class='ingredient'>ingredients</p>
+            <input type='Submit' value='Select this Recipe'>
+        </form>
+
+    </div>
+
+</body>
+
+</html>
