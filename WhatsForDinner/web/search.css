@@ -2,30 +2,55 @@
  * search.css
  * 
  * Created: 11/02/2021
- * Updated: 11/09/2021
+ * Updated: 11/22/2021
  * Author: Tou Ko Lee
  */
 
-
-#hint{
-    color: gray;
-    margin-top: 0;
+body {
+    overflow: auto; /* lets you scroll */
 }
 
-#headers , .queries{ 
+.hero {
+    height: 170px; /* changes height of background image so you can see the list of recipes */
+}
+
+#queries{
+    margin-top: 20px;
+}
+
+/* creates layout of queries */
+#headers, .queries{ 
     display: grid; 
-    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
     grid-template-rows: auto auto auto; 
     grid-gap: 10px; 
 }
 
 .queries{
     border-top: solid black;
+    margin-top: -20px;
+    padding-top: 10px;
 }
 
-.footer {
-  background-color: #f1f1f1;
-  padding: 10px;
-  text-align: center;
-  box-sizing: border-box;
+h3 {
+    margin: -10px 0px 10px 10px;
+}
+
+/* changes only my imgs */
+.queries > img {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    width: 300px;
+    height: 200px;
+}
+
+.name, .ingredient, .queries > input{
+    border-left: solid black;
+    margin-top: -10px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.queries > input {
+    cursor: pointer;
 }
