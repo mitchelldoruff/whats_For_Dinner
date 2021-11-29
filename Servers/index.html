@@ -1,10 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>whats For Dinner</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Montserrat:wght@200&display=swap" rel="stylesheet">
+
+</head> 
 <body>
+    <div class = "container hero"> <!--when a user lands on page it will show full height of image/stop when user scrolls down/ end based on where they land -->
+        <div class="menu">   
+    <nav>
+        <img class="logo" src="newLogoY.png" /> 
+        <ul>
+         
+            <li><a href="index.html" class="ttyl">Home</a></li>
+            <li><form action="RecipeListController" method="get">
+	<input type = "Submit" class="ttyl" value="Recipes"/>
+        </form></li>
+            <li>About us</li>
+        </ul>
+    </nav>
+   
+
+    
+    <div class="text">
+        <h1>Are you looking for ideas?</h1>
+        <form action="IngredientMatchController" method="get">
+        <input type="text" name = "Ingredients" placeholder = "My ingredients">
+	<input type = "Submit" value ="Add Ingredients" class="button"/>
+        </form>
+    </div>
+    </div>
+</div>
+
 
 </body>
 </html>
+

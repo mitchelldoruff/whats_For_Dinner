@@ -31,4 +31,14 @@
 	<url-pattern>/IngredientMatchController</url-pattern>
 </servlet-mapping>
 
+<servlet>
+	<servlet-name>AddRecipeController</servlet-name>
+	<servlet-class>AddRecipeController</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>AddRecipeController</servlet-name>
+	<url-pattern>/AddRecipeController</url-pattern>
+</servlet-mapping>
+
 </web-app>

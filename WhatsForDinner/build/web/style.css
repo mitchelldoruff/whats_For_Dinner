@@ -9,7 +9,7 @@
 nav {
     display: flex;
     justify-content: center;
-color:white;
+    color:white;
 
 }
 body{
@@ -19,6 +19,7 @@ body{
     overflow: hidden;
 
 }
+
 .logo  {
     width: 400px;
     margin-top: -120px;
@@ -42,13 +43,15 @@ ul li{
     background-size: cover; /*streches background image to be full size of the container (take up entire homepage) */
     background-image: url("https://res.cloudinary.com/abdel-rahman-ali/image/upload/v1535988526/contact-food.jpg");
     height: 100vh;
+    background-position: center;
 
 }
 
 .text {
     color : white;
-    max-width: 850px;
+    max-width: 1250px;
     margin: 3rem auto; /*a way to make text/spacing responoisve*/
+
 
 }
 
@@ -80,4 +83,14 @@ menu ul {
 
 input {
     padding: 15px 20px;
+}
+
+.ttyl{
+    display: inline-block;
+    padding: 30px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    background-color: transparent;
 }

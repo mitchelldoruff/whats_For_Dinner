@@ -267,5 +267,112 @@ public class Model {
         rs.close();
         return true;
     }
+    
+        public static Boolean addRecipe(PrintWriter out, String recipeName, String[] ingredients, String[] instructions) throws SQLException, ClassNotFoundException {
+
+        Connection con = createJDBCConnection();
+        Statement stmt = con.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT * FROM maxes");
+        if (rs == null) {
+            return false;
+        }
+        rs.next();
+        int recipeID = Integer.parseInt(rs.getString(1)) + 1;
+        int instructionID = Integer.parseInt(rs.getString(2)) + 1;
+        int ingredientID = Integer.parseInt(rs.getString(3)) + 1;
+        
+        String x = "";
+        int z = stmt.executeUpdate("INSERT INTO recipe" +
+        " VALUES("+ recipeID + ", '" + recipeName + "')");
+        if (z!= 0) { System.out.println("Record inserted"); } else out.println("not inserted");
+       // x+="INSERT INTO recipe (recipeid, recipe_name) " +
+        //" VALUES ("+ recipeID + ", '" + recipeName + "');\n\n";
+
+        
+        
+        int i =0;
+        while (ingredients[i] != null && i< ingredients.length){
+            int l = stmt.executeUpdate("INSERT INTO ingredients " +
+        " VALUES("+ingredientID + ", " + recipeID + ", '" + ingredients[i] + "', 'FALSE')");
+            if (l!= 0) { System.out.println("Record inserted"); } else out.println("not inserted");
+            //x+= "INSERT INTO ingredients "
+         //           + "(idingredients, recipe_key, ingredient_name, isoptional) " +
+        //" VALUES ("+ingredientID + ", " + recipeID + ", '" + ingredients[i] + "', 'FALSE');\n";
+            i++;
+            ingredientID++;
+        }
+
+        i=0;
+        while(instructions[i] != null && i< instructions.length){
+            int k = i + 1;
+            int l = stmt.executeUpdate("INSERT INTO instructions " +
+        " VALUES("+instructionID + ", " + recipeID + ", " + k + ", '" + instructions[i] + "')");
+            if (l!= 0) { System.out.println("Record inserted"); } else out.println("not inserted");
+            //x+= "INSERT INTO instructions "
+            //        + "(idinstructions, recipe_key, instruction_order, instruction_desc) " +
+        //" VALUES ("+instructionID + ", " + recipeID + ", " + (i+1) + ",'" + instructions[i] + "');\n";
+            i++;
+            instructionID++;
+        }
+        out.println("<!DOCTYPE html>\n" +
+"<html lang=\"en\">\n" +
+"<head>\n" +
+"    <meta charset=\"UTF-8\">\n" +
+"    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+"    <title>whats For Dinner</title>\n" +
+"    <link rel=\"stylesheet\" href=\"style.css\">\n" +
+"    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n" +
+"    <script src=\"https://code.jquery.com/jquery-3.6.0.js\" integrity=\"sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=\" crossorigin=\"anonymous\"></script>\n" +
+"    <script src=\"addRecipe.js\"></script>\n" +
+"<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n" +
+"<link href=\"https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Montserrat:wght@200&display=swap\" rel=\"stylesheet\">\n" +
+"\n" +
+"</head>\n" +
+"<body>\n" +
+"    <div class = \"container hero\"> <!--when a user lands on page it will show full height of image/stop when user scrolls down/ end based on where they land -->\n" +
+"        <div class=\"menu\">\n" +
+"    <nav>\n" +
+"        <img class=\"logo\" src=\"newLogoY.png\" />\n" +
+"        <ul>\n" +
+"\n" +
+"            <li><a href=\"index.html\" class=\"ttyl\">Home</a></li>\n" +
+"            <li><form action=\"RecipeListController\" method=\"get\">\n" +
+"	<input type = \"Submit\" class=\"ttyl\" value=\"Recipes\"/>\n" +
+"        </form></li>\n" +
+"            <li>About us</li>\n" +
+"        </ul>\n" +
+"    </nav>\n" +
+"\n" +
+"    <div class=\"text\">\n" +
+"      <h1>Add</h1>\n" +
+"        <form action=\"AddRecipeController\" method=\"get\">\n" +
+"        <label for=\"recipeName\">Recipe Name:</label>\n" +
+"        <input type=\"text\" name = \"recipeName\" placeholder = \"name\" id=\"recipeName\">\n" +
+"        <br><br>\n" +
+"        <p id=\"ingredients\">Ingredients:\n" +
+"        <span id =\"addIngr\" class=\"button\">+</span>\n" +
+"        <input type=\"text\" name = \"ing1\" placeholder = \"ingredient\">\n" +
+"\n" +
+"        </p>\n" +
+"        <br><br>\n" +
+"        <p id=\"instructions\">Instructions:\n" +
+"          <label id =\"addInst\" class=\"button\">+</label>\n" +
+"          <input type=\"text\" name = \"inst1\" placeholder = \"instruction\">\n" +
+"        </p>\n" +
+"	       <input type = \"Submit\" value =\"Add Recipe\" class=\"button\"/>\n" +
+"        </form>\n" +
+"    </div>\n" +
+"    </div>\n" +
+"</div>\n" +
+"\n" +
+"\n" +
+"</body>\n" +
+"</html>\n" +
+"");
+        con.close();
+        stmt.close();
+        rs.close();
+        return true;
+    }
 
 }
