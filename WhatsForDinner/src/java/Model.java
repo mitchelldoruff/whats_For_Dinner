@@ -108,7 +108,7 @@ public class Model {
             String order = rs.getString(2);
             String instruction = rs.getString(3);
             if (id.equals(idRecipe)) {
-                html += "<li> Step " + order + ": " + instruction + "</li>";
+                html += "<li> " + instruction + "</li>";
             }
         }
         html += "</div>\n"
@@ -339,7 +339,7 @@ public class Model {
 "            <li><form action=\"RecipeListController\" method=\"get\">\n" +
 "	<input type = \"Submit\" class=\"ttyl\" value=\"Recipes\"/>\n" +
 "        </form></li>\n" +
-"            <li>About us</li>\n" +
+"            <li><a href=\"aboutus.html\" class=\"ttyl\">About us</a></li>\n" +
 "        </ul>\n" +
 "    </nav>\n" +
 "\n" +
