@@ -247,7 +247,7 @@ public class Model {
             if (ingredients.containsAll(ing)) {
                 html += "<form class='queries' action=\"GetRecipeController\" method=\"get\">\n"
                         + "            <p class='name'>" + recipeName + "</p>\n"
-                        + "            <p class='ingredient'>" + ingredients + "</p>\n"
+                        + "            <p class='ingredient'>" + ing + "</p>\n"
                         + "<input type=\"text\" name = \"id\" id = \"asdf\" hidden value = \"" + id + "\">"
                         + "            <input type=\"Submit\" value=\"Select Recipe\">\n"
                         + "        </form>";
