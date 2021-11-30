@@ -10,11 +10,16 @@ import javax.servlet.http.HttpServletResponse;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-/**
+/**GetRecipe Controller grabs all recipe info for selected recipe
  *
  * @author mitchelldoruff
  */
 public class GetRecipeController  extends HttpServlet{
+    /**Service gets called when the select recipe button is selected, and feeds
+     * the response information for that recipe
+    * @param req: request information
+    * @param res: response from program
+    */
     public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
     		PrintWriter out = res.getWriter();
                 String id = req.getParameter("id");

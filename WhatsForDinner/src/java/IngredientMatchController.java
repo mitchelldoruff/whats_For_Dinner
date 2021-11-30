@@ -13,11 +13,17 @@ import javax.servlet.http.HttpServletResponse;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-/**
+/**IngredientMatchcontroller, controls all recipe lists user specified ingredients.
  *
  * @author mitchelldoruff
  */
 public class IngredientMatchController extends HttpServlet{
+    /**Service gets called when the ingredients are entered in the landing page
+     * and the add Ingredients button is selected.  It responds by entering the 
+     * recipes that match to the res
+    * @param req: request information
+    * @param res: response from program
+    */
     public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
     		PrintWriter out = res.getWriter();
                 String ingr = req.getParameter("Ingredients");

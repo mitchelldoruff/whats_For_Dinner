@@ -9,8 +9,18 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 
+/**Model connects to the DB and uses the DB info to rewrite html pages
+ *
+ * @author mitchelldoruff
+ */
 public class Model {
 
+    /**creates connection to the DB
+     *
+     * @return the connection
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
     public static Connection createJDBCConnection() throws SQLException, ClassNotFoundException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         String JdbcURL = "jdbc:mysql:///wfd";
@@ -21,6 +31,14 @@ public class Model {
         return con;
     }
 
+    /**Gets instructions for a selected recipe and prints them in a new html page.
+     *
+     * @param out response writer
+     * @param idRecipe recipe ID
+     * @return true if worked, false otherwise
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
     public static Boolean getInstructions(PrintWriter out, String idRecipe) throws SQLException, ClassNotFoundException {
 
         Connection con = createJDBCConnection();
@@ -125,7 +143,14 @@ public class Model {
         rs.close();
         return true;
     }
-
+    
+    /**Gets all recipes and prints them in a new html page.
+     *
+     * @param out response writer
+     * @return true if worked, false otherwise
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
     public static Boolean getRecipes(PrintWriter out) throws SQLException, ClassNotFoundException {
 
         Connection con = createJDBCConnection();
@@ -185,7 +210,15 @@ public class Model {
         rs.close();
         return true;
     }
-
+    
+    /**Gets all recipes that match given ingredients  and prints them in a new html page.
+     *
+     * @param out response writer
+     * @param ingredients ingredients entered by user
+     * @return true if worked, false otherwise
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
     public static Boolean getMatches(PrintWriter out, List<String> ingredients) throws SQLException, ClassNotFoundException {
 
         Connection con = createJDBCConnection();
@@ -268,6 +301,17 @@ public class Model {
         return true;
     }
     
+    
+     /**Adds new recipe to DB
+     *
+     * @param out response writer
+     * @param recipeName recipe name entered by user
+     * @param ingredients ingredients entered by user
+     * @param instructions instructions entered by user
+     * @return true if worked, false otherwise
+     * @throws SQLException
+     * @throws ClassNotFoundException
+     */
         public static Boolean addRecipe(PrintWriter out, String recipeName, String[] ingredients, String[] instructions) throws SQLException, ClassNotFoundException {
 
         Connection con = createJDBCConnection();

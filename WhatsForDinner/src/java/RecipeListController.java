@@ -5,7 +5,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**RecipeListcontroller, controls all recipe lists no specified ingredients.
+ *
+ * @author mitchelldoruff
+ */
 public class RecipeListController extends HttpServlet {
+    /**Service gets called when the recipes button is selected.  sending all recipes
+     * back.
+    * @param req: request information
+    * @param res: response from program
+    */
 	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
                 
                 
